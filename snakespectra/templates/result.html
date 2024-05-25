@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Spectra Results</title>
+</head>
+<body>
+    <h1>Matching Snakes</h1>
+    <ul>
+        {% for snake in snakes %}
+            <li>{{ snake.name }} - Venomous: {{ snake.venomous }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'find_snake_by_attributes' %}">Search Again</a>
+</body>
+</html>

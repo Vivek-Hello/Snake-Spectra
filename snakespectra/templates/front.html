@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Spectra</title>
+</head>
+<body>
+    <h1>Find Snake by Attributes</h1>
+    <form method="POST" action="{% url 'find_snake_by_attributes' %}">
+        {% csrf_token %}
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required><br><br>
+
+        <label for="scale">Scales:</label>
+        <input type="text" id="scale" name="scale" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
