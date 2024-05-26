@@ -38,7 +38,11 @@ def find_snake_by_attributes(request):
         prediction = classifier.predict([[color_encoded, scales_encoded]])
         venomous = 'Yes' if prediction[0] == 1 else 'No'
         '''
-        df['Venomous'] = df['Venomous'].map({'Yes': 1, 'No': 0})
+       # df['Venomous'] = df['Venomous'].map({'Yes': 1, 'No': 0})
+        color_encoded = label_encoder_color.transform([color])[0]
+        scales_encoded = label_encoder_scales.transform([scales])[0]
+        prediction = classifier.predict([[color_encoded, scales_encoded]])
+        venomous = 'Yes' if prediction[0] == 1 else 'No'
 
         # Find the matching snakes in the dataset
         result = df[(df['Color'] == color) & (df['Scales'] == scales)]
